@@ -38,6 +38,38 @@ The downloader test suite uses mocked HTTP and does not require live network
 access. The renderer unit tests use fake renderers by default. The real Blender
 smoke test is opt-in through `BLENDER_EXE`.
 
+## Agent Setup Prompt
+
+Give this prompt to an AI coding agent so it can install or internalize the
+workflow instead of making you configure every step manually:
+
+```text
+Please adopt this repository as an AntScan dataset processing workflow.
+
+Repository: https://github.com/wicm84266964/antscan-toolkit
+
+Read README.md, docs/, skills/antscan_download/SKILL.md, and
+skills/antscan_render_export/SKILL.md. If your environment supports reusable
+skills or agent instructions, install or register both skill directories. If it
+does not, internalize those SKILL.md files as durable operating instructions
+for this project or session.
+
+When helping me work with AntScan:
+- Use downloader/ for AntScan page discovery, STL/TIF task tracking, downloads,
+  SQLite state, and manifest exports.
+- Use renderer/ for Blender-based STL-to-PNG multi-view rendering and retry.
+- Do not reimplement discovery, download, state tracking, manifest generation,
+  rendering, or retry logic unless I explicitly ask.
+- Keep concurrency conservative and respect the public AntScan site.
+- Keep downloaded meshes, TIF volumes, rendered images, SQLite databases, logs,
+  and production manifests out of the repository unless I explicitly ask for
+  sanitized examples.
+- For rendering, verify Blender is installed and prefer a small smoke run before
+  a large batch.
+- Report discovered/downloaded counts, output manifest paths, render run
+  directories, failed or retried specimen IDs, and final CSV summaries.
+```
+
 ## Downloader Quickstart
 
 ```powershell
