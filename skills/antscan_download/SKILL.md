@@ -1,12 +1,13 @@
 ---
 name: antscan-download
-description: Discover and incrementally download AntScan STL files with a low-concurrency Python CLI, durable SQLite state, resumable pending work, explicit failed retries, and optional TIF volume commands.
+description: Crawl AntScan listing/detail pages to discover STL download tasks, then incrementally download files with a low-concurrency Python CLI, durable SQLite state, resumable pending work, explicit failed retries, manifest export, and optional TIF volume commands.
 ---
 
 # AntScan Download
 
-Use this skill when the user wants to collect AntScan dataset files by running
-the downloader included in this toolkit.
+Use this skill when the user wants to collect AntScan dataset files by first
+discovering AntScan STL/TIF download tasks and then running the downloader
+included in this toolkit.
 
 ## Bundle Root
 

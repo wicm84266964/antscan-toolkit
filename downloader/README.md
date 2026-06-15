@@ -1,7 +1,8 @@
 # AntScan Downloader
 
-Low-concurrency incremental downloader for AntScan STL files, with explicit TIF
-volume commands.
+Low-concurrency crawler and incremental downloader for AntScan STL files. It
+discovers download tasks from AntScan listing/detail pages, persists durable
+SQLite state, exports manifests, and provides explicit TIF volume commands.
 
 ## Install
 

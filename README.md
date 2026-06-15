@@ -2,15 +2,16 @@
 
 中文说明见 [README.zh-CN.md](README.zh-CN.md).
 
-AntScan Toolkit is a small open-source workflow bundle for working with the
+AntScan Toolkit is a small open-source workflow toolkit for working with the
 AntScan dataset:
 
-- `downloader/` incrementally discovers and downloads AntScan STL files, with
-  optional TIF volume discovery/download commands.
+- `downloader/` crawls AntScan listing/detail pages to discover STL download
+  tasks, then incrementally downloads and exports manifests, with optional TIF
+  volume discovery/download commands.
 - `renderer/` renders downloaded STL surface models into multi-view 2D PNG
   images through Blender background mode.
-- `skills/` contains Codex skill contracts that tell an agent how to call the
-  two tools without reimplementing them.
+- `skills/` contains optional agent contracts that explain how to call the two
+  tools without reimplementing them.
 
 The tools are intentionally conservative: the downloader defaults to
 low-concurrency operation, and the renderer processes one Blender render job at
@@ -23,7 +24,7 @@ antscan-toolkit/
   downloader/                # Python package: discovery, download, SQLite state, exports
   renderer/                  # Blender-based STL-to-PNG batch renderer
   renderer/manifests/        # sanitized example batch manifest
-  skills/                    # Codex skill entrypoints
+  skills/                    # optional agent contracts
   docs/                      # end-to-end workflow notes
 ```
 
@@ -78,13 +79,13 @@ Run a batch:
 
 ```powershell
 cd renderer
-python .\run_batch.py --manifest .\manifests\batch.example.json --blender-exe "C:\Program Files\Blender Foundation\Blender\blender.exe"
+python .\run_batch.py --manifest .\manifests\batch.example.json --blender-exe "<path-to-blender.exe>"
 ```
 
 Retry unfinished or failed items from an existing run directory:
 
 ```powershell
-python .\run_batch.py --resume-run .\runs\<run_id> --blender-exe "C:\Program Files\Blender Foundation\Blender\blender.exe"
+python .\run_batch.py --resume-run .\runs\<run_id> --blender-exe "<path-to-blender.exe>"
 ```
 
 The renderer writes per-specimen PNG views and run summary CSV files under the
@@ -110,7 +111,7 @@ python -m pytest tests -q
 Run the real Blender smoke test only when Blender is installed:
 
 ```powershell
-$env:BLENDER_EXE = "C:\Program Files\Blender Foundation\Blender\blender.exe"
+$env:BLENDER_EXE = "<path-to-blender.exe>"
 python -m pytest tests\test_blender_smoke.py -q
 ```
 
