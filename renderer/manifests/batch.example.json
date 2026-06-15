@@ -1,0 +1,39 @@
+{
+  "batch_name": "antscan_batch_example",
+  "blender_exe": "",
+  "output_root": "./runs",
+  "image_format": "PNG",
+  "image_size": 4096,
+  "image_color_depth": 8,
+  "png_compression": 15,
+  "render_engine": "auto",
+  "background_mode": "solid",
+  "background_gray": 0,
+  "model_gray": 220,
+  "views": [
+    "front",
+    "rear",
+    "profile_left",
+    "profile_left_up45",
+    "dorsal",
+    "profile_right_up45",
+    "profile_right",
+    "profile_right_down45",
+    "ventral",
+    "profile_left_down45"
+  ],
+  "projection": "orthographic",
+  "fit_mode": "bbox",
+  "margin_ratio": 0.12,
+  "axis_preset": "antscan_v1",
+  "global_rotation_deg": [0, 0, 0],
+  "skip_existing": true,
+  "continue_on_error": true,
+  "parallel_jobs": 1,
+  "specimens": [
+    {
+      "id": "specimen_0001",
+      "model_path": "./examples/specimen_0001.stl"
+    }
+  ]
+}

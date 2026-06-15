@@ -1,0 +1,33 @@
+# Runtime data
+data/
+downloads/
+exports/
+state/
+runs/
+artifacts/
+*.sqlite3
+*.db
+*.csv
+
+# Build outputs
+build/
+dist/
+*.egg-info/
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.venv/
+venv/
+
+# Blender/runtime logs
+*.blend1
+*.log
+*.tmp
+
+# Local environment
+.env
+.env.*

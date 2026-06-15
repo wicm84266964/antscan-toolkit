@@ -1,0 +1,12 @@
+[tool.pytest.ini_options]
+testpaths = [
+    "downloader/tests",
+    "renderer/tests",
+]
+pythonpath = [
+    "downloader/src",
+    "renderer",
+]
+markers = [
+    "live_smoke: opt-in real HTTP smoke test against the live AntScan site",
+]

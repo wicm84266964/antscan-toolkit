@@ -1,0 +1,32 @@
+# AntScan incremental downloader config.
+[paths]
+state_dir = "./state"
+download_root = "./downloads"
+export_dir = "./exports"
+
+[antscan]
+listing_url_template = "https://biomedisa.info/antscan/?page={page}"
+detail_url_template = "https://biomedisa.info/antscan/specimen/{specimen_id}/"
+download_url_template = "https://biomedisa.info/antscan/download/?id={file_id}&object=processed"
+
+[http]
+concurrency = 1
+timeout_seconds = 30
+max_retries = 3
+backoff_seconds = 1.5
+delay_seconds = 0.8
+jitter_seconds = 0.4
+user_agent = "antscan-toolkit/0.1"
+
+[discovery]
+consecutive_known_specimens_limit = 2
+consecutive_listing_pages_without_new_limit = 1
+
+[download]
+lease_seconds = 900
+chunk_size = 65536
+download_tif = false
+
+[audit]
+save_html_snapshots = false
+snapshot_dir = "./state/snapshots"
