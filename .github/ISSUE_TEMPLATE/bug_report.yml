@@ -1,0 +1,73 @@
+name: Bug report
+description: Report a reproducible AntScan Toolkit problem
+title: "[Bug]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for helping improve AntScan Toolkit. Use a minimal example and remove credentials, restricted specimen metadata, private dataset locations, downloaded research data, and personal information.
+  - type: input
+    id: version
+    attributes:
+      label: Version or commit
+      placeholder: "For example: v1.0.0 or abc1234"
+    validations:
+      required: true
+  - type: dropdown
+    id: component
+    attributes:
+      label: Component
+      options:
+        - Downloader
+        - Renderer
+        - Agent skill
+        - Documentation
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Runtime environment
+      description: Include the operating system, Python version, and Blender version when relevant.
+      placeholder: "Windows 11, Python 3.12, Blender 4.3"
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Provide the smallest reliable sequence that triggers the problem.
+      placeholder: |
+        1. Run...
+        2. Process...
+        3. Observe...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Redacted logs or manifest excerpt
+      description: Attach only the minimum relevant output after removing sensitive content.
+      render: shell
+  - type: checkboxes
+    id: confirmations
+    attributes:
+      label: Confirmations
+      options:
+        - label: I searched existing issues for the same problem.
+          required: true
+        - label: I removed credentials, restricted records, private dataset paths, and personal data.
+          required: true

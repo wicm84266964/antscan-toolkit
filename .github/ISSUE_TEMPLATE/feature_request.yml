@@ -1,0 +1,39 @@
+name: Feature request
+description: Propose an AntScan workflow improvement
+title: "[Feature]: "
+body:
+  - type: input
+    id: workflow
+    attributes:
+      label: Workflow
+      description: Which download, rendering, or agent-assisted task would this improve?
+      placeholder: "For example: incremental TIF discovery or failed render retry"
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem to solve
+      description: Describe the current limitation and its effect on dataset work.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed behavior
+      description: Describe the expected result without including restricted research data.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+  - type: checkboxes
+    id: confirmations
+    attributes:
+      label: Confirmations
+      options:
+        - label: I searched existing issues for a similar request.
+          required: true
+        - label: This request contains no credentials, restricted records, downloaded data, or personal information.
+          required: true
