@@ -13,7 +13,7 @@ dependencies = []
 [project.optional-dependencies]
 dev = [
     "Pillow>=10,<12",
-    "pytest>=7.4,<9",
+    "pytest>=7.4,<10",
 ]
 
 [tool.pytest.ini_options]
